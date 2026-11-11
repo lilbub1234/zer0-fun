@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>zer0.fun is for sale</title>
+<meta name="description" content="This premium domain is for sale. Enquire or make an offer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ====== EDIT THESE ====== */
+  :root {
+    --accent: #7df9ff;      /* glow colour */
+    --accent-2: #b388ff;    /* secondary glow */
+  }
+  /* ======================== */
+
+  :root {
+    --bg: #000;
+    --text: #e8f6ff;
+    --muted: #7a8a99;
+    --line: rgba(125, 249, 255, 0.14);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Background: perspective grid + glow */
+  .bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .bg::before {
+    content: ""; position: absolute; left: -50%; right: -50%; bottom: -10%; height: 60%;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: perspective(500px) rotateX(62deg);
+    transform-origin: center top;
+    animation: grid 6s linear infinite;
+    mask-image: linear-gradient(to bottom, transparent, #000 40%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 40%);
+  }
+  .bg::after {
+    content: ""; position: absolute; left: 50%; top: 42%; width: 900px; height: 500px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, rgba(125,249,255,0.10), rgba(179,136,255,0.05), transparent);
+    filter: blur(20px);
+  }
+  @keyframes grid { to { background-position: 0 60px, 0 0; } }
+  .scan {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.025) 0 1px, transparent 1px 3px);
+  }
+
+  main {
+    position: relative; z-index: 2;
+    min-height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 48px 16px;
+    gap: 28px;
+  }
+
+  .tag {
+    font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--line);
+    padding: 8px 16px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); animation: pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: 0.25; } }
+
+  h1.domain {
+    font-family: "Orbitron", sans-serif; font-weight: 900;
+    font-size: clamp(32px, 8vw, 92px);
+    letter-spacing: 0.04em;
+    line-height: 1.05;
+    word-break: break-word;
+    background: linear-gradient(180deg, #ffffff 20%, var(--accent) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-shadow: 0 0 40px rgba(125, 249, 255, 0.25);
+  }
+
+  .sub {
+    font-family: "Orbitron", sans-serif; font-weight: 500;
+    font-size: clamp(14px, 2.4vw, 20px);
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .price {
+    margin-top: 8px;
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+  }
+  .price .label { font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); }
+  .price .amount {
+    font-family: "Orbitron", sans-serif; font-weight: 700;
+    font-size: clamp(36px, 7vw, 64px);
+    color: #fff;
+    text-shadow: 0 0 18px rgba(179, 136, 255, 0.55);
+  }
+  .price .amount small { font-size: 0.35em; letter-spacing: 0.2em; color: var(--accent-2); margin-left: 8px; vertical-align: middle; }
+
+  .actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+  .btn {
+    font-family: "Orbitron", sans-serif; font-weight: 700;
+    font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase;
+    padding: 16px 28px; min-width: 200px;
+    border-radius: 4px; cursor: pointer;
+    transition: transform .15s, box-shadow .2s, background .2s, color .2s;
+  }
+  .btn.primary { background: var(--accent); color: #000; border: 1px solid var(--accent); box-shadow: 0 0 24px rgba(125,249,255,0.35); }
+  .btn.primary:hover { box-shadow: 0 0 40px rgba(125,249,255,0.6); transform: translateY(-2px); }
+  .btn.ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.25); }
+  .btn.ghost:hover { border-color: var(--accent-2); color: var(--accent-2); box-shadow: 0 0 24px rgba(179,136,255,0.3); transform: translateY(-2px); }
+  .btn:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+
+  footer { position: relative; z-index: 2; text-align: center; padding: 0 16px 28px; font-size: 11px; letter-spacing: 0.2em; color: #3f4a55; text-transform: uppercase; }
+
+  /* Modal */
+  .overlay {
+    position: fixed; inset: 0; z-index: 10;
+    background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+    display: none; align-items: center; justify-content: center; padding: 16px;
+  }
+  .overlay.open { display: flex; animation: fade .2s ease; }
+  @keyframes fade { from { opacity: 0; } }
+  .modal {
+    width: 100%; max-width: 460px;
+    background: #05080b;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 0 60px rgba(125,249,255,0.12);
+    text-align: left;
+    position: relative;
+  }
+  .modal h2 { font-family: "Orbitron", sans-serif; font-size: 18px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 6px; }
+  .modal p.hint { color: var(--muted); font-size: 12px; margin-bottom: 20px; }
+  .close { position: absolute; top: 14px; right: 16px; background: none; border: 0; color: var(--muted); font-size: 22px; cursor: pointer; }
+  .close:hover { color: #fff; }
+  label { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin: 14px 0 6px; }
+  input, textarea {
+    width: 100%; background: #000; color: var(--text);
+    border: 1px solid rgba(255,255,255,0.15); border-radius: 4px;
+    padding: 12px 14px; font-family: inherit; font-size: 14px;
+  }
+  input:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(125,249,255,0.12); }
+  textarea { min-height: 96px; resize: vertical; }
+  .offer-row { position: relative; }
+  .offer-row span { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+  .offer-row input { padding-left: 28px; }
+  .modal .btn { width: 100%; margin-top: 22px; }
+  .status { margin-top: 14px; font-size: 12px; color: var(--accent); min-height: 1em; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg::before, .dot { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="scan"></div>
+
+  <main>
+    <div class="tag"><span class="dot"></span>Available Now</div>
+    <h1 class="domain" id="domain">zer0.fun</h1>
+    <div class="sub">This domain is for sale</div>
+
+    <div class="price">
+      <div class="label">Asking Price</div>
+      <div class="amount">$100,000<small>USD</small></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" data-mode="enquire">Enquire</button>
+      <button class="btn ghost" data-mode="offer">Make an Offer</button>
+    </div>
+  </main>
+
+  <footer>Secure transfer via escrow &middot; Serious enquiries only</footer>
+
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <form class="modal" id="form">
+      <button type="button" class="close" id="close" aria-label="Close">&times;</button>
+      <h2 id="modal-title">Enquire</h2>
+      <p class="hint" id="modal-hint">Send a message about this domain.</p>
+
+      <label for="name">Name</label>
+      <input id="name" name="name" required autocomplete="name">
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required autocomplete="email">
+
+      <div id="offer-field">
+        <label for="offer">Your Offer (USD)</label>
+        <div class="offer-row"><span>$</span><input id="offer" name="offer" inputmode="numeric" placeholder="85,000"></div>
+      </div>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Tell us a little about your interest…"></textarea>
+
+      <button class="btn primary" type="submit" id="submit">Send</button>
+      <div class="status" id="status"></div>
+    </form>
+  </div>
+
+<script>
+  /* ====== EDIT THESE ====== */
+  const CONFIG = {
+    contactEmail: "meng@pair.fund",   // where enquiries go
+    formEndpoint: "",                 // optional: a Formspree/Basin URL to receive submissions without opening the visitor's email app
+    domainOverride: "zer0.fun"        // domain shown on the page
+  };
+  /* ======================== */
+
+  const host = (CONFIG.domainOverride || location.hostname || "").replace(/^www\./, "");
+  const domain = host && host !== "localhost" && !/^[\d.]+$/.test(host) ? host : "yourdomain.com";
+  document.getElementById("domain").textContent = domain;
+  document.title = domain + " is for sale";
+
+  const overlay = document.getElementById("overlay");
+  const form = document.getElementById("form");
+  const title = document.getElementById("modal-title");
+  const hint = document.getElementById("modal-hint");
+  const offerField = document.getElementById("offer-field");
+  const offerInput = document.getElementById("offer");
+  const status = document.getElementById("status");
+  let mode = "enquire";
+
+  function open(m) {
+    mode = m;
+    const isOffer = m === "offer";
+    title.textContent = isOffer ? "Make an Offer" : "Enquire";
+    hint.textContent = isOffer ? "Submit your counter offer for " + domain + "." : "Send a message about " + domain + ".";
+    offerField.style.display = isOffer ? "" : "none";
+    offerInput.required = isOffer;
+    status.textContent = "";
+    overlay.classList.add("open");
+    setTimeout(() => document.getElementById("name").focus(), 50);
+  }
+  function close() { overlay.classList.remove("open"); }
+
+  document.querySelectorAll("[data-mode]").forEach(b => b.addEventListener("click", () => open(b.dataset.mode)));
+  document.getElementById("close").addEventListener("click", close);
+  overlay.addEventListener("click", e => { if (e.target === overlay) close(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+
+  offerInput.addEventListener("input", () => {
+    const n = offerInput.value.replace(/[^\d]/g, "");
+    offerInput.value = n ? Number(n).toLocaleString("en-US") : "";
+  });
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const data = {
+      domain,
+      type: mode === "offer" ? "Offer" : "Enquiry",
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      offer: mode === "offer" ? "$" + offerInput.value + " USD" : "",
+      message: form.message.value.trim()
+    };
+    const subject = `${data.type}: ${domain}${data.offer ? " — " + data.offer : ""}`;
+    const body = [
+      `Domain: ${domain}`,
+      `Name: ${data.name}`,
+      `Email: ${data.email}`,
+      data.offer ? `Offer: ${data.offer}` : "",
+      "",
+      data.message
+    ].filter(l => l !== null).join("\n");
+
+    if (CONFIG.formEndpoint) {
+      status.textContent = "Sending…";
+      try {
+        const r = await fetch(CONFIG.formEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({ ...data, _subject: subject })
+        });
+        if (!r.ok) throw new Error();
+        status.textContent = "Received. We'll be in touch shortly.";
+        form.reset();
+      } catch {
+        status.textContent = "Something went wrong — opening your email app instead.";
+        location.href = `mailto:${CONFIG.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      }
+    } else {
+      location.href = `mailto:${CONFIG.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      status.textContent = "Opening your email app…";
+    }
+  });
+</script>
+</body>
+</html>
